@@ -1,0 +1,16 @@
+.navbarContainer{
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    margin:1%;
+}
+
+.navbarContainer>svg{
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.navbarContainer img{   
+    border:1px solid
+}

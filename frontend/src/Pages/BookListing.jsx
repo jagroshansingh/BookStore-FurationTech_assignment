@@ -11,7 +11,7 @@ import { Footer } from "../Components/Footer";
 import { useLocation, useSearchParams } from "react-router-dom";
 
 export const BookListing = () => {
-  const [searchParams,setSearchParams]=useSearchParams()
+  const [searchParams]=useSearchParams()
   const location=useLocation();
   const { booklist, isLoading } = useSelector((store) => store);
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export const BookListing = () => {
       }
     })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         dispatch(BookList(res.data));
       })
       .catch((err) => console.log(err));

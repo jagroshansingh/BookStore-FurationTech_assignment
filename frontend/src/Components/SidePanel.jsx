@@ -100,6 +100,11 @@ export const SidePanel = () => {
         </div>
 
         <div>
+          <Heading>Price</Heading>
+          <PriceSlider setprice={setPrice} price={price} />
+        </div>
+
+        <div>
           <Heading>Edition</Heading>
           <div>
             <Checkbox
@@ -125,10 +130,7 @@ export const SidePanel = () => {
             </Checkbox>
           </div>
         </div>
-        <div>
-          <Heading>Price</Heading>
-          <PriceSlider setprice={setPrice} price={price} />
-        </div>
+        
       </div>
     </div>
   );

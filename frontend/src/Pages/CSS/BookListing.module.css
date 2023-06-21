@@ -5,9 +5,15 @@
 
 .navbar {
   grid-area: nav;
+  position:sticky;
+  top:0px;
+  backdrop-filter: blur(9px);
 }
 .sidePanel {
   grid-area: side;
+  position:sticky;
+  top:70px;
+  height: 100vh;
 }
 .mainContent {
   grid-area: main;
