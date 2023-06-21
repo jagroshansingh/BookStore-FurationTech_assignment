@@ -4,10 +4,12 @@ const { bookRouter } = require('./Routes/BookRoutes')
 const app=express()
 require('dotenv').config()
 const cors=require('cors')
+const { authRouter } = require('./Routes/AuthRoutes')
 
 app.use(cors())
 app.use(express.json())
 app.use('/books',bookRouter)
+app.use('/',authRouter)
 
 app.listen(process.env.port,async()=>{
     try {

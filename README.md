@@ -7,6 +7,7 @@ An Interactive Bookstore application. Build using MERN Stack
     <li>BookListing Page is reponsive for all screen-sizes</li>
     <li>Use of UseSearchParams Hook for setting the URL query params</li>
     <li>Retains the filtered data amid the page reloads</li>
+    <li>Hashed the password in DB using Bcrypt</li>
 </ul>
 
 # Tech Stacks used
