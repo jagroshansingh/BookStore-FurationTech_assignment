@@ -12,7 +12,7 @@ import { Footer } from "../Components/Footer";
 export const BookListing = () => {
   const { booklist, isLoading } = useSelector((store) => store);
   const dispatch = useDispatch();
-  console.log(booklist);
+  // console.log(booklist);
 
   React.useEffect(() => {
     axios({

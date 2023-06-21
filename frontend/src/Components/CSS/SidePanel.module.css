@@ -1,0 +1,10 @@
+.filterContainer>div{
+    display: grid;
+    text-align: start;
+    padding: 2%;
+}
+
+.filterContainer h2{
+    font-size:larger;
+    text-decoration: underline;
+}

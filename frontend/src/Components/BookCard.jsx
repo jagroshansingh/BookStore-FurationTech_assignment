@@ -3,7 +3,6 @@ import React from "react";
 import styles from './CSS/BookCard.module.css'
 
 export const BookCard = ({ bookDetails }) => {
-  console.log(bookDetails);
   const { image_url, book_name, cost } = bookDetails;
   return (
     <div className={styles.Card}>
