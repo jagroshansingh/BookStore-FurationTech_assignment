@@ -1,0 +1,11 @@
+.sliderContainer{
+    margin-top:25px 
+}
+
+.sliderMark{
+    text-align: center;
+    background-color: rgb(0, 0, 255);
+    color: white;
+    margin: -35px 0px 0px -25px;
+    width: 50px;
+}

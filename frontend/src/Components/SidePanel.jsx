@@ -2,9 +2,11 @@ import { Checkbox, Heading } from "@chakra-ui/react";
 import React from "react";
 import styles from "./CSS/SidePanel.module.css";
 import { useSearchParams } from "react-router-dom";
+import PriceSlider from "./PriceSlider";
 
 export const SidePanel = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [price,setPrice]=React.useState(searchParams.get('price'))
 
   const initialGenre = searchParams.getAll("genre");
   const [genre, setGenre] = React.useState(initialGenre || []);
@@ -35,8 +37,9 @@ export const SidePanel = () => {
       genre,
       edition,
     };
+    price && (params.price=price)
     setSearchParams(params);
-  }, [genre, edition]);
+  }, [genre, edition, price]);
   return (
     <div>
       <Heading>Filter</Heading>
@@ -94,6 +97,10 @@ export const SidePanel = () => {
             2023
           </Checkbox>
           </div>
+        </div>
+        <div>
+          <Heading>Price</Heading>
+          <PriceSlider setprice={setPrice} price={price} />
         </div>
       </div>
     </div>
