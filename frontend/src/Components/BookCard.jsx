@@ -1,16 +1,16 @@
-import { Button, Card, CardBody, CardFooter, Center, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Button, Heading, Image, Stack } from "@chakra-ui/react";
 import React from "react";
 import styles from './CSS/BookCard.module.css'
 
 export const BookCard = ({ bookDetails }) => {
   console.log(bookDetails);
-  const { image, title, price } = bookDetails;
+  const { image_url, book_name, cost } = bookDetails;
   return (
     <div className={styles.Card}>
-        <Image src={image} alt="Book Image"/>
+        <Image src={image_url} alt="Book Image"/>
         <Stack>
-        <Heading size={'xs'}>{title}</Heading>
-        <Heading size={'md'}>{price}</Heading>
+        <Heading size={'xs'}>{book_name}</Heading>
+        <Heading size={'md'}>₹{cost}</Heading>
         <Button>Add to Cart</Button>
         </Stack>
     </div>

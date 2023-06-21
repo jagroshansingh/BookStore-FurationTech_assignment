@@ -15,11 +15,11 @@ export const BookListing = () => {
   React.useEffect(() => {
     axios({
       method: "get",
-      url: "https://api.itbook.store/1.0/search/mongodb",
+      url: `${process.env.REACT_APP_URL}/books/all`,
     })
       .then((res) => {
-        // console.log(res.data.books);
-        dispatch(BookList(res.data.books));
+        // console.log(res.data);
+        dispatch(BookList(res.data));
       })
       .catch((err) => console.log(err));
   }, []);
@@ -28,12 +28,12 @@ export const BookListing = () => {
       {/* <SidePanel/> */}
       {isLoading ? (
         <Heading>Loading...</Heading>
-      ) : booklist.length == 0 ? (
+      ) : booklist?.length == 0||!booklist ? (
         <Heading>No data available</Heading>
       ) : (
         <Box className={styles.mainPanel}>
           {booklist?.map((book, index) => (
-            <BookCard key={index} bookDetails={book} />
+            <BookCard key={book._id} bookDetails={book} />
           ))}
         </Box>
       )}
