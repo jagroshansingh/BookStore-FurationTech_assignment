@@ -17,7 +17,7 @@ export const BookListing = () => {
       url: "https://api.itbook.store/1.0/search/mongodb",
     })
       .then((res) => {
-        console.log(res.data.books);
+        // console.log(res.data.books);
         dispatch(BookList(res.data.books));
       })
       .catch((err) => console.log(err));
@@ -28,6 +28,7 @@ export const BookListing = () => {
       {isLoading ? (
         <Heading>Loading...</Heading>
       ) : (
+        booklist.length==0?<Heading>No data available</Heading>:
         booklist?.map((book, index) => <BookCard key={index} />)
       )}
     </div>
