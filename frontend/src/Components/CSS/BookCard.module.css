@@ -1,0 +1,17 @@
+.Card{
+    border:1px solid gainsboro;
+    border-radius: 2%;
+    display: grid;
+}
+
+.Card img{
+    object-fit:fill;
+    border: 0px solid;
+}
+
+.Card>div{
+    border:0px solid;
+    padding:2%;
+    display:grid;
+    align-content:space-between ;
+}

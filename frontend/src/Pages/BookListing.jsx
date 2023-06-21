@@ -4,7 +4,8 @@ import { BookCard } from "../Components/BookCard";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { BookList } from "../Redux/action";
-import { Heading } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import styles from "./CSS/BookListing.module.css";
 
 export const BookListing = () => {
   const { booklist, isLoading } = useSelector((store) => store);
@@ -21,15 +22,20 @@ export const BookListing = () => {
         dispatch(BookList(res.data.books));
       })
       .catch((err) => console.log(err));
-  },[]);
+  }, []);
   return (
     <div>
       {/* <SidePanel/> */}
       {isLoading ? (
         <Heading>Loading...</Heading>
+      ) : booklist.length == 0 ? (
+        <Heading>No data available</Heading>
       ) : (
-        booklist.length==0?<Heading>No data available</Heading>:
-        booklist?.map((book, index) => <BookCard key={index} />)
+        <Box className={styles.mainPanel}>
+          {booklist?.map((book, index) => (
+            <BookCard key={index} bookDetails={book} />
+          ))}
+        </Box>
       )}
     </div>
   );
