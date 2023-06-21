@@ -10,7 +10,6 @@ import { useState } from "react";
 import styles from "./CSS/PriceSlider.module.css";
 
 export default function PriceSlider({ setprice, price }) {
-    console.log(price)
   let initial = price / 30;
   const [sliderValue, setSliderValue] = useState(initial ? initial : 50);
 

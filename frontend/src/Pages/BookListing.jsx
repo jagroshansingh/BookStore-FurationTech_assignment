@@ -8,8 +8,11 @@ import { Box, Heading } from "@chakra-ui/react";
 import styles from "./CSS/BookListing.module.css";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 export const BookListing = () => {
+  const [searchParams,setSearchParams]=useSearchParams()
+  const location=useLocation();
   const { booklist, isLoading } = useSelector((store) => store);
   const dispatch = useDispatch();
   // console.log(booklist);
@@ -17,14 +20,19 @@ export const BookListing = () => {
   React.useEffect(() => {
     axios({
       method: "get",
-      url: `${process.env.REACT_APP_URL}/books/all`,
+      url: `${process.env.REACT_APP_URL}/books`,
+      params:{
+        genre:searchParams.getAll('genre'),
+        edition:searchParams.getAll('edition'),
+        price:searchParams.get('price')
+      }
     })
       .then((res) => {
         // console.log(res.data);
         dispatch(BookList(res.data));
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [location.search]);
   return (
     <div className={styles.BookListingContainer}>
       <div className={styles.navbar}>
