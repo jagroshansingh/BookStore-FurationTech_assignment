@@ -1,7 +1,12 @@
-.filterContainer>div{
+.filterContainer>div>div{
     display: grid;
     text-align: start;
-    padding: 2%;
+    padding: 3%;
+}
+
+.filterContainer>div{
+    text-align: start;
+    padding: 3%;
 }
 
 .filterContainer h2{
