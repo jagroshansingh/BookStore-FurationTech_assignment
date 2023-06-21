@@ -1,0 +1,14 @@
+.error{
+    border:0px solid;
+    height:100vh;
+    display: grid;
+    align-items: center;
+}
+
+.error>div{
+    border:0px solid
+}
+
+.error button{
+    background-color: blueviolet;
+}
