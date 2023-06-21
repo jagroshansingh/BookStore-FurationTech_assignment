@@ -24,11 +24,12 @@ export const BookListing = () => {
       params:{
         genre:searchParams.getAll('genre'),
         edition:searchParams.getAll('edition'),
-        price:searchParams.get('price')
+        price:searchParams.get('price'),
+        sort:searchParams.get('sort')
       }
     })
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         dispatch(BookList(res.data));
       })
       .catch((err) => console.log(err));
