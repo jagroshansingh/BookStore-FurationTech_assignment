@@ -2,6 +2,7 @@
     border:1px solid gainsboro;
     border-radius: 2%;
     display: grid;
+    margin:2%
 }
 
 .Card img{

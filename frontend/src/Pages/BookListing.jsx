@@ -6,6 +6,8 @@ import axios from "axios";
 import { BookList } from "../Redux/action";
 import { Box, Heading } from "@chakra-ui/react";
 import styles from "./CSS/BookListing.module.css";
+import { Navbar } from "../Components/Navbar";
+import { Footer } from "../Components/Footer";
 
 export const BookListing = () => {
   const { booklist, isLoading } = useSelector((store) => store);
@@ -24,19 +26,29 @@ export const BookListing = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div>
-      {/* <SidePanel/> */}
-      {isLoading ? (
+    <div className={styles.BookListingContainer}>
+      <div className={styles.navbar}>
+        <Navbar />
+      </div>
+      <div className={styles.sidePanel}>
+        <SidePanel />
+      </div>
+      <div className={styles.mainContent}>
+        {isLoading ? (
         <Heading>Loading...</Heading>
       ) : booklist?.length == 0||!booklist ? (
         <Heading>No data available</Heading>
       ) : (
         <Box className={styles.mainPanel}>
-          {booklist?.map((book, index) => (
+          {booklist?.map((book) => (
             <BookCard key={book._id} bookDetails={book} />
           ))}
         </Box>
       )}
+      </div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   );
 };

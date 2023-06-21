@@ -1,5 +1,53 @@
-.mainPanel{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:2%;
+.mainPanel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.navbar {
+  grid-area: nav;
+}
+.sidePanel {
+  grid-area: side;
+}
+.mainContent {
+  grid-area: main;
+}
+.footer {
+  grid-area: foot;
+}
+
+.BookListingContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "nav  nav  nav  nav"
+    "side main main main"
+    "foot foot foot foot";
+}
+.BookListingContainer > div {
+  border: 1px solid;
+}
+
+@media screen and (max-width: 768px) {
+  .mainPanel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .BookListingContainer {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "nav"
+      "main"
+      "foot";
+  }
+
+  .sidePanel {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mainPanel {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
