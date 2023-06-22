@@ -14,7 +14,7 @@ export const BookCard = ({ bookDetails }) => {
   const handleCart=()=>{
     if (Auth?.token) {
       axios({
-        method: "post",
+        method: "patch",
         url: `${process.env.REACT_APP_URL}/books/cart/add`,
         data:{productID:_id,userID:Auth.userID},
         headers: {

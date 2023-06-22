@@ -36,13 +36,12 @@ bookRouter.get("/singleBook",async(req,res)=>{
     }
 })
 
-bookRouter.post("/cart/add", (req, res) => {
-  productID = req.body.productID;
+bookRouter.patch("/cart/add", (req, res) => {
+  let productID = req.body.productID;
   try {
     jwt.verify(req.headers.authorization, "fullstack", async (err, decoded) => {
       if (decoded) {
         let user = await AuthModel.findById(req.body.userID);
-        // console.log(user);
         if (user && !user.cart.includes(productID)) {
           await AuthModel.updateOne(
             { _id: req.body.userID },
@@ -56,5 +55,16 @@ bookRouter.post("/cart/add", (req, res) => {
     res.send(error);
   }
 });
+
+bookRouter.delete("/cart/delete",async(req,res)=>{
+    let userID=req.query.userID;
+    let productID=req.query.productID;
+ try {
+    await AuthModel.updateOne({_id:userID},{$pull:{cart:productID}})
+    res.send('removed success')
+ } catch (error) {
+    res.send(error)
+ }
+})
 
 module.exports = { bookRouter };

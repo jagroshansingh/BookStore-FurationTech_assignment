@@ -11,10 +11,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export const CartCard = ({ bookId }) => {
+export const CartCard = ({ bookId,handleDelete }) => {
   const [data, setData] = React.useState({});
-
-  const handleDelete = () => {};
 
   React.useEffect(() => {
     axios({
@@ -44,7 +42,7 @@ export const CartCard = ({ bookId }) => {
 
         <Flex>
           <Text>₹{data?.cost}</Text>
-          <CloseButton onClick={handleDelete} />
+          <CloseButton onClick={()=>handleDelete(bookId)} />
         </Flex>
       </Flex>
     </div>
