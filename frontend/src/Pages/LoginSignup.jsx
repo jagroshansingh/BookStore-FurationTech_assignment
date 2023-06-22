@@ -77,7 +77,7 @@ export const LoginSignup = () => {
       })
         .then((res) => {
           if (res.data?.token) {
-            sessionStorage.setItem("Token", res.data.token);
+            sessionStorage.setItem("Auth", JSON.stringify(res.data));
             navigate("/booklisting");
           }
           toast({

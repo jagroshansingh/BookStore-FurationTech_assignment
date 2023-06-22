@@ -10,7 +10,7 @@ authRouter.post("/signup", async (req, res) => {
     if (found.length == 0) {
       bcrypt.hash(req.body.password, 5, async (err, hash) => {
         try {
-          await AuthModel.insertMany({ email: req.body.email, password: hash });
+          await AuthModel.insertMany({ email: req.body.email, password: hash, cart:{key:'value'} });
           res.send("Registration Success");
         } catch (error) {
           res.send("Registration Failed");
@@ -25,12 +25,13 @@ authRouter.post("/signup", async (req, res) => {
 authRouter.post("/login", async (req, res) => {
     try {
       let found = await AuthModel.find({ email: req.body.email });
+      // console.log(found)
       if (found.length == 1) {
         bcrypt.compare(req.body.password, found[0].password, (err, result) => {
           if (result)
           {
               const token=jwt.sign({furation:'tech'},'fullstack')
-              res.send({msg:"Login Successful",token:token});
+              res.send({msg:"Login Successful",token:token, userID:found[0]._id});
           } 
           else res.send({msg:"Invalid Credentials"});
         });
