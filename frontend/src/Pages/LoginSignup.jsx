@@ -10,13 +10,14 @@ import {
   Input,
   Heading,
   VStack,
+  useToast,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import styles from './CSS/LoginSignup.module.css'
-
+import styles from "./CSS/LoginSignup.module.css";
 
 export const LoginSignup = () => {
-  const navigate=useNavigate()
+  const toast = useToast();
+  const navigate = useNavigate();
   let initialLogin = {
     email: "",
     password: "",
@@ -37,34 +38,64 @@ export const LoginSignup = () => {
   };
 
   const handleSignupClick = () => {
-    if (signup.password == signup.cpassword) {
+    if (signup.email && signup.password && signup.cpassword) {
+      if (signup.password == signup.cpassword) {
+        axios({
+          method: "post",
+          url: `${process.env.REACT_APP_URL}/signup`,
+          data: signup,
+        })
+          .then((res) => toast({
+            title: res.data,
+            status: res.data=='Registration Success'?"success":"warning",
+            duration: 2000,
+            position: "top",
+          }))
+          .catch((err) => console.log(err));
+      } else
+        toast({
+          title: "Password doesn't Match, Try Again!",
+          status: "warning",
+          duration: 2000,
+          position: "top",
+        });
+    } else
+      toast({
+        title: "Fields can't be Empty",
+        status: "warning",
+        duration: 2000,
+        position: "top",
+      });
+  };
+
+  const handleLoginClick = () => {
+    if (login.email && login.password) {
       axios({
         method: "post",
-        url: `${process.env.REACT_APP_URL}/signup`,
-        data: signup
+        url: `${process.env.REACT_APP_URL}/login`,
+        data: login,
       })
-        .then((res) => alert(res.data))
+        .then((res) => {
+          if (res.data?.token) {
+            sessionStorage.setItem("Token", res.data.token);
+            navigate("/booklisting");
+          }
+          toast({
+            title: res.data.msg,
+            status: res.data.msg=='Login Successful'?"success":"warning",
+            duration: 2000,
+            position: "top",
+          });
+        })
         .catch((err) => console.log(err));
-    }
-    else alert("Recheck the password")
+    } else
+      toast({
+        title: "Fields can't be Empty",
+        status: "warning",
+        duration: 2000,
+        position: "top",
+      });
   };
-  
-  const handleLoginClick=()=>{
-    axios({
-      method:"post",
-      url:`${process.env.REACT_APP_URL}/login`,
-      data:login
-    })
-    .then((res)=>{
-      if(res.data?.token)
-      {
-        sessionStorage.setItem('Token',res.data)
-        navigate('/')
-      } 
-      alert(res.data.msg)
-    })
-    .catch((err)=>console.log(err))
-  }
   return (
     <div>
       <Box className={styles.authContainer}>
@@ -76,8 +107,8 @@ export const LoginSignup = () => {
           <TabPanels>
             <TabPanel>
               <VStack>
-                <Heading>Login Form</Heading>
-                <VStack>
+                <Heading>Login</Heading>
+                <VStack className={styles.inputFields}>
                   <Input
                     type="email"
                     placeholder="Email Address"
@@ -91,8 +122,6 @@ export const LoginSignup = () => {
                   <Input
                     type="submit"
                     placeholder="Login"
-                    backgroundColor="blue.600"
-                    color={"white"}
                     onClick={handleLoginClick}
                   ></Input>
                 </VStack>
@@ -100,8 +129,8 @@ export const LoginSignup = () => {
             </TabPanel>
             <TabPanel>
               <VStack>
-                <Heading>Signup Form</Heading>
-                <VStack>
+                <Heading>Signup</Heading>
+                <VStack className={styles.inputFields}>
                   <Input
                     type="email"
                     name="email"
@@ -123,8 +152,6 @@ export const LoginSignup = () => {
                   <Input
                     type="submit"
                     placeholder="Signup"
-                    backgroundColor="blue.600"
-                    color={"white"}
                     onClick={handleSignupClick}
                   ></Input>
                 </VStack>

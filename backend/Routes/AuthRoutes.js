@@ -29,13 +29,13 @@ authRouter.post("/login", async (req, res) => {
         bcrypt.compare(req.body.password, found[0].password, (err, result) => {
           if (result)
           {
-              const token=jwt.sign({employee:'management'},'fullstack')
+              const token=jwt.sign({furation:'tech'},'fullstack')
               res.send({msg:"Login Successful",token:token});
           } 
           else res.send({msg:"Invalid Credentials"});
         });
       }
-      else res.send("Invalid Credentials!")
+      else res.send({msg:"Invalid Credentials!"})
     } catch (error) {
       res.send(error);
     }

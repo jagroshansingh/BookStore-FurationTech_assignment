@@ -5,3 +5,13 @@
   border-radius: 7% 7% 7px 7px;
   margin-top: 5%;
 }
+
+.inputFields>:last-child{
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+}
+
+.inputFields>:last-child:hover{
+  background-color: blueviolet;
+}
