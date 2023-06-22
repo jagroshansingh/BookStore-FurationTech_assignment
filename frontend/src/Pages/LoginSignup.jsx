@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CSS/LoginSignup.module.css";
+import { Navbar } from "../Components/Navbar";
 
 export const LoginSignup = () => {
   const toast = useToast();
@@ -98,6 +99,7 @@ export const LoginSignup = () => {
   };
   return (
     <div>
+      <Navbar/>
       <Box className={styles.authContainer}>
         <Tabs isFitted variant="solid-rounded">
           <TabList mb="1em">

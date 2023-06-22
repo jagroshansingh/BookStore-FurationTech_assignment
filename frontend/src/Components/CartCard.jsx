@@ -11,9 +11,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export const CartCard = ({ bookId,handleDelete }) => {
+export const CartCard = ({ bookId, handleDelete, setTotalPrice }) => {
   const [data, setData] = React.useState({});
-
+  
   React.useEffect(() => {
     axios({
       method: "get",
@@ -22,10 +22,12 @@ export const CartCard = ({ bookId,handleDelete }) => {
     })
       .then((res) => {
         // console.log(res.data);
-        setData(res.data);
+        setData(res.data);    
+        setTotalPrice(prev=>prev+res.data.cost)
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err));     
   }, []);
+
   return (
     <div>
       <Flex className={styles.container}>
@@ -42,7 +44,7 @@ export const CartCard = ({ bookId,handleDelete }) => {
 
         <Flex>
           <Text>₹{data?.cost}</Text>
-          <CloseButton onClick={()=>handleDelete(bookId)} />
+          <CloseButton onClick={() => handleDelete(bookId,data.cost)} />
         </Flex>
       </Flex>
     </div>
