@@ -8,6 +8,7 @@ An Interactive Bookstore application. Build using MERN Stack
     <li>Use of UseSearchParams Hook for setting the URL query params</li>
     <li>Retains the filtered data amid the page reloads</li>
     <li>Hashed the password in DB using Bcrypt</li>
+    <li>Use of Toast over default alert for feedback</li>
 </ul>
 
 # Tech Stacks used

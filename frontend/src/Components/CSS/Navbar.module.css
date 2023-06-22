@@ -1,8 +1,15 @@
 .navbarContainer>div{
-    height: 6vh;
+    height: 8vh;
     display: flex;
     justify-content: space-between;
-    margin:1%;
+    margin:1% 0% 0%;
+    padding:0% 2%
+}
+
+.navbarContainer>div>div{
+    border:0px solid;
+    display: flex;
+    gap:15px;
 }
 
 .navbarContainer svg{
@@ -12,6 +19,7 @@
 }
 
 .navbarContainer img{   
-    border:1px solid;
+    height: 40px;
+    border:0px solid;
     cursor: pointer;
 }

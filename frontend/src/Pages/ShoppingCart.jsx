@@ -86,7 +86,7 @@ export const ShoppingCart = () => {
           <Stack boxShadow="md" className={styles.shoppingCart}>
             {cartItems?.length == 0 && (
               <Box className={styles.emptyCart}>
-                <Heading>Your Cart is Empty</Heading>
+                <Heading>Cart is Empty</Heading>
               </Box>
             )}
 
@@ -137,7 +137,7 @@ export const ShoppingCart = () => {
 
             <Link to="/checkout">
               {" "}
-              <Button>Checkout</Button>{" "}
+              <Button isDisabled={totalPrice==0}>Checkout</Button>{" "}
             </Link>
           </Stack>
           <HStack>
