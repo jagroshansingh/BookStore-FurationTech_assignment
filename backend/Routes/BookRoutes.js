@@ -26,6 +26,16 @@ bookRouter.get("/", async (req, res) => {
   }
 });
 
+bookRouter.get("/singleBook",async(req,res)=>{
+    console.log(req.query.bookId)
+    try {
+        let bookDetail= await bookModel.findById(req.query.bookId)
+        res.send(bookDetail)
+    } catch (error) {
+        res.send(error)
+    }
+})
+
 bookRouter.post("/cart/add", (req, res) => {
   productID = req.body.productID;
   try {
@@ -33,10 +43,10 @@ bookRouter.post("/cart/add", (req, res) => {
       if (decoded) {
         let user = await AuthModel.findById(req.body.userID);
         // console.log(user);
-        if (user && !user.cart.hasOwnProperty(productID)) {
+        if (user && !user.cart.includes(productID)) {
           await AuthModel.updateOne(
             { _id: req.body.userID },
-            { $set: { [`cart.${productID}`]: 1 } }
+            { $push: { cart:productID } }
           );
           res.send("verified");
         } else res.send(null);

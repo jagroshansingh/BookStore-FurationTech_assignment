@@ -1,0 +1,29 @@
+.container{
+    padding: 2%;
+    align-items: center;
+    /* border:1px solid */
+}
+
+.container>div:first-child{
+    width: 50vw;
+}
+
+.container img{
+    height: 100px;
+}
+
+.bookInfo>p{
+    text-align: left;
+    font-weight: bold;
+}
+
+.bookInfo>p:last-child{
+    color: gray;
+}
+
+.container>div:last-child{
+    /* border:1px solid; */
+    justify-content: space-between;
+    margin-left: 9%;
+    width:100%
+}

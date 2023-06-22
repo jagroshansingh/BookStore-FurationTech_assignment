@@ -1,11 +1,11 @@
-.navbarContainer{
+.navbarContainer>div{
     height: 6vh;
     display: flex;
     justify-content: space-between;
     margin:1%;
 }
 
-.navbarContainer>div>svg{
+.navbarContainer svg{
     width: 40px;
     height: 30px;
     cursor: pointer;

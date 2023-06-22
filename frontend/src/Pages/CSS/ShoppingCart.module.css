@@ -1,0 +1,33 @@
+.cartContainer{
+    padding: 4%
+}
+
+.cartContainer h2{
+    font-size: 24px;
+    color: grey;
+}
+
+.shoppingCart{
+    width: 90%;
+}
+
+.orderSummary{
+    width:100%;
+    padding:2%;
+    border-radius: 5px;
+}
+
+.emptyCart{
+    width:60vw;
+    height:50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orderSummary button{
+    background-color: rgb(135, 135, 211);
+    width:100%
+}
+
+
