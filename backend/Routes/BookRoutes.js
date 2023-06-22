@@ -36,6 +36,8 @@ bookRouter.get("/singleBook",async(req,res)=>{
     }
 })
 
+//---------------------Operations on Cart------------------------
+
 bookRouter.patch("/cart/add", (req, res) => {
   let productID = req.body.productID;
   try {
@@ -61,7 +63,7 @@ bookRouter.delete("/cart/delete",async(req,res)=>{
     let productID=req.query.productID;
  try {
     await AuthModel.updateOne({_id:userID},{$pull:{cart:productID}})
-    res.send('removed success')
+    res.send('Book removed from cart')
  } catch (error) {
     res.send(error)
  }

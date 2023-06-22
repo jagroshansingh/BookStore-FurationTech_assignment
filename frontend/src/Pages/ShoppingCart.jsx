@@ -1,14 +1,14 @@
 import axios from "axios";
 import React from "react";
 import { CartCard } from "../Components/CartCard";
-import { Box, Button, Divider, HStack, Heading, Stack } from "@chakra-ui/react";
+import { Box, Button, Divider, HStack, Heading, Stack, useToast } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../Components/Navbar";
 import styles from "./CSS/ShoppingCart.module.css";
 
 export const ShoppingCart = () => {
   const [cartItems, setCartItems] = React.useState([]);
-
+  const toast=useToast()
   let { userID } = JSON.parse(sessionStorage.getItem("Auth"));
 
   const FetchUser = () => {
@@ -31,7 +31,12 @@ export const ShoppingCart = () => {
       params: { userID, productID: id },
     })
       .then((res) => {
-        console.log(res);
+        toast({
+          position:'top',
+          title:res.data,
+          status:'success',
+          duration:2000
+        })
         FetchUser()
       })
       .catch((err) => console.log(err));
