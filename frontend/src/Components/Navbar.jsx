@@ -31,7 +31,7 @@ export const Navbar = () => {
           onClick={() => navigate("/")}
           src="https://furation.tech/ftlogo2.svg"
         />
-        <Input width={"500px"} placeholder="SearchBar" />
+        <Input placeholder="SearchBar" />
         <div>
           <Icon as={BsCart3} onClick={() => navigate("/shoppingcart")} />
           <Button onClick={handleAuth}>{!ss?.token?'SignUp/Login':'Logout'}</Button>

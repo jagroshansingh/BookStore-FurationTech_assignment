@@ -55,9 +55,9 @@ export const BookListing = () => {
         </Box>
       )}
       </div>
-      <div className={styles.footer}>
+      {/* <div className={styles.footer}>
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -19,9 +19,20 @@ export const Carousel = ({ images }) => {
       prevIndex === images.length - 4 ? 0 : prevIndex + 1
     );
   };
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 4 ? 0 : prevIndex + 1
+      );
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <div>
-      <Flex align="center" justify="space-between">
+    <div className={styles.carouselContainer}>
+      <Flex>
         <IconButton
           icon={<ChevronLeftIcon />}
           onClick={handlePrevClick}

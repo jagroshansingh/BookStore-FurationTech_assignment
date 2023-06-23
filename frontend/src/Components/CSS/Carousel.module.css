@@ -1,8 +1,17 @@
 .imageContainer{
-    
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    /* border:1px solid */
 }
 
 .imageContainer>img{
-    margin:0% 2%;
     cursor: pointer;
+    border: 1px solid gainsboro;
+}
+
+.carouselContainer>div{
+    align-items: center;
+    justify-content: space-between;
+    border:0px solid
 }

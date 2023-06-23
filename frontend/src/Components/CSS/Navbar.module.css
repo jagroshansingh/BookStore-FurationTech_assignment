@@ -1,9 +1,15 @@
+.navbarContainer{
+    position:sticky;
+    top:0px;
+    backdrop-filter: blur(9px);
+    z-index: 3;
+}
+
 .navbarContainer>div{
-    height: 8vh;
+    height: 80px;
     display: flex;
     justify-content: space-between;
-    margin:1% 0% 0%;
-    padding:0% 2%
+    padding:20px 2% 0%
 }
 
 .navbarContainer>div>div{
@@ -22,4 +28,10 @@
     height: 40px;
     border:0px solid;
     cursor: pointer;
+}
+
+.navbarContainer input{
+    background-color: rgb(249, 244, 244);
+    max-width: 800px;
+    margin:0% 3%
 }
