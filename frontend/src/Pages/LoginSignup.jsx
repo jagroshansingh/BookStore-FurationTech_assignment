@@ -100,7 +100,7 @@ export const LoginSignup = () => {
   return (
     <div>
       <Navbar/>
-      <Box className={styles.authContainer}>
+      <Box className={styles.authContainer} boxShadow={'dark-lg'}>
         <Tabs isFitted variant="solid-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>

@@ -25,7 +25,7 @@ export const Carousel = ({ images }) => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 4 ? 0 : prevIndex + 1
       );
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [images.length]);

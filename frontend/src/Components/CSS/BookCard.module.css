@@ -17,7 +17,3 @@
     display:grid;
     align-content:space-between ;
 }
-
-.Card button{
-    z-index: -2;
-}

@@ -27,13 +27,21 @@ bookRouter.get("/", async (req, res) => {
 });
 
 bookRouter.get("/singleBook",async(req,res)=>{
-    console.log(req.query.bookId)
     try {
         let bookDetail= await bookModel.findById(req.query.bookId)
         res.send(bookDetail)
     } catch (error) {
         res.send(error)
     }
+})
+
+bookRouter.get('/search',async(req,res)=>{
+  try {
+    let bookInfo=await bookModel.find({'book_name':req.query.name})
+    res.send(bookInfo[0])
+  } catch (error) {
+    res.send(error)
+  }
 })
 
 //---------------------Operations on Cart------------------------
@@ -67,6 +75,15 @@ bookRouter.delete("/cart/delete",async(req,res)=>{
  } catch (error) {
     res.send(error)
  }
+})
+
+bookRouter.delete("/cart/emptyCart",async(req,res)=>{
+  try {
+    await AuthModel.updateOne({_id:req.query.userID},{$set:{cart:[]}})
+    res.send('Empty Cart')
+  } catch (error) {
+    res.send(error)
+  }
 })
 
 module.exports = { bookRouter };

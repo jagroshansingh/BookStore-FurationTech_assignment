@@ -7,7 +7,6 @@ import styles from "./CSS/BookDetails.module.css";
 
 export const BookDetails = () => {
   const [bookData, setBookData] = React.useState({});
-  console.log(bookData);
   const { id } = useParams();
   const toast=useToast()
   const navigate=useNavigate()

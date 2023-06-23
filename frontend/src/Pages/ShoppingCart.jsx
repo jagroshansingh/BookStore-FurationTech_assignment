@@ -65,15 +65,7 @@ export const ShoppingCart = () => {
   };
 
   React.useEffect(() => {
-    if (!ss) {
-      navigate("/auth");
-      toast({
-        position: "top",
-        title: "Need to Authenticate First",
-        status: "info",
-        duration: 2000,
-      });
-    }
+    
     FetchUser();
   }, []);
   return (
