@@ -7,7 +7,6 @@ import { BookList } from "../Redux/action";
 import { Box, Heading } from "@chakra-ui/react";
 import styles from "./CSS/BookListing.module.css";
 import { Navbar } from "../Components/Navbar";
-import { Footer } from "../Components/Footer";
 import { useLocation, useSearchParams } from "react-router-dom";
 
 export const BookListing = () => {
