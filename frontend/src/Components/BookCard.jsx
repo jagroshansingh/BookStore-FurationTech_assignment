@@ -2,14 +2,14 @@ import { Button, Heading, Image, Stack, useToast } from "@chakra-ui/react";
 import React from "react";
 import styles from './CSS/BookCard.module.css'
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const BookCard = ({ bookDetails }) => {
+  const navigate=useNavigate()
   const toast=useToast()
-  // console.log(bookDetails)
   const {_id, image_url, book_name, cost } = bookDetails;
 
   let Auth=JSON.parse(sessionStorage.getItem('Auth'))||null
-  // console.log(Auth)
 
   const handleCart=()=>{
     if (Auth?.token) {
@@ -44,11 +44,11 @@ export const BookCard = ({ bookDetails }) => {
   
   return (
     <div className={styles.Card}>
-        <Image src={image_url} alt="Book Image"/>
+        <Image src={image_url} alt="Book Image" onClick={()=>navigate(`/bookdetails/${_id}`)}/>
         <Stack>
         <Heading size={'xs'}>{book_name}</Heading>
         <Heading size={'md'}>₹{cost}</Heading>
-        <Button onClick={handleCart}>Add to Cart</Button>
+        <Button onClick={handleCart} colorScheme={'teal'}>Add to Cart</Button>
         </Stack>
     </div>
   );

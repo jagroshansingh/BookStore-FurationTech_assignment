@@ -40,7 +40,7 @@ export const LoginSignup = () => {
 
   const handleSignupClick = () => {
     if (signup.email && signup.password && signup.cpassword) {
-      if (signup.password == signup.cpassword) {
+      if (signup.password === signup.cpassword) {
         axios({
           method: "post",
           url: `${process.env.REACT_APP_URL}/signup`,
@@ -48,7 +48,7 @@ export const LoginSignup = () => {
         })
           .then((res) => toast({
             title: res.data,
-            status: res.data=='Registration Success'?"success":"warning",
+            status: res.data==='Registration Success'?"success":"warning",
             duration: 2000,
             position: "top",
           }))
@@ -83,7 +83,7 @@ export const LoginSignup = () => {
           }
           toast({
             title: res.data.msg,
-            status: res.data.msg=='Login Successful'?"success":"warning",
+            status: res.data.msg==='Login Successful'?"success":"warning",
             duration: 2000,
             position: "top",
           });

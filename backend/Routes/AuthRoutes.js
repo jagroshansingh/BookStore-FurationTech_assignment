@@ -7,7 +7,7 @@ const { AuthModel } = require("../Model/AuthModel");
 authRouter.post("/signup", async (req, res) => {
   try {
     let found = await AuthModel.find({ email: req.body.email });
-    if (found.length == 0) {
+    if (found.length === 0) {
       bcrypt.hash(req.body.password, 5, async (err, hash) => {
         try {
           await AuthModel.insertMany({ email: req.body.email, password: hash, cart:[]});
@@ -26,7 +26,7 @@ authRouter.post("/login", async (req, res) => {
     try {
       let found = await AuthModel.find({ email: req.body.email });
       // console.log(found)
-      if (found.length == 1) {
+      if (found.length === 1) {
         bcrypt.compare(req.body.password, found[0].password, (err, result) => {
           if (result)
           {

@@ -1,0 +1,25 @@
+.bookContainer{
+    margin: 2% 15%;
+    gap:25px
+}
+
+.bookContainer>div:first-child{
+    border:0px solid;
+    justify-content: space-around;
+}
+
+.bookDetails{
+    display: grid;
+    align-content: space-between;
+    border:0px solid;
+    width:60%;
+    padding-bottom: 5%;
+}
+
+.buttonGroup{
+    align-items: center;
+}
+
+.bookContainer button:first-child{
+    width:100%
+}

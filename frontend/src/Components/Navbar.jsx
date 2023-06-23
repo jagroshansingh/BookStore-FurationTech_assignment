@@ -34,7 +34,7 @@ export const Navbar = () => {
         <Input placeholder="SearchBar" />
         <div>
           <Icon as={BsCart3} onClick={() => navigate("/shoppingcart")} />
-          <Button onClick={handleAuth}>{!ss?.token?'SignUp/Login':'Logout'}</Button>
+          <Button colorScheme="red" onClick={handleAuth} variant={'outline'}>{!ss?.token?'SignUp/Login':'Logout'}</Button>
         </div>
       </Box>
     </div>

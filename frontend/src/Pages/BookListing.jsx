@@ -45,7 +45,7 @@ export const BookListing = () => {
       <div className={styles.mainContent}>
         {isLoading ? (
         <Heading>Loading...</Heading>
-      ) : booklist?.length == 0||!booklist ? (
+      ) : booklist?.length === 0||!booklist ? (
         <Heading>No data available</Heading>
       ) : (
         <Box className={styles.mainPanel}>

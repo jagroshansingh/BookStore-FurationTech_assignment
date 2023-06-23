@@ -2,13 +2,13 @@
     border:1px solid gainsboro;
     border-radius: 2%;
     display: grid;
-    margin:2%;
-    cursor: pointer;
+    margin:2%;    
 }
 
 .Card img{
     object-fit:fill;
     border: 0px solid;
+    cursor: pointer;
 }
 
 .Card>div{
