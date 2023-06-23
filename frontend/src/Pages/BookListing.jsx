@@ -15,7 +15,7 @@ export const BookListing = () => {
   const location=useLocation();
   const { booklist, isLoading } = useSelector((store) => store);
   const dispatch = useDispatch();
-  // console.log(booklist);
+  console.log(booklist);
 
   React.useEffect(() => {
     axios({
@@ -55,9 +55,6 @@ export const BookListing = () => {
         </Box>
       )}
       </div>
-      {/* <div className={styles.footer}>
-        <Footer />
-      </div> */}
     </div>
   );
 };
