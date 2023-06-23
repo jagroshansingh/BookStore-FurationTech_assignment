@@ -1,6 +1,7 @@
 # ft.bookStore
 
-An Interactive Bookstore application. Build using MERN Stack
+<p>An Interactive Bookstore application. Build using MERN Stack</p>
+<p>Live: https://book-store-furation-tech-assignment.vercel.app/</p>
 
 # Features
 
