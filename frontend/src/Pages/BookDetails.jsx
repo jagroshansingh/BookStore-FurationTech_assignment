@@ -55,7 +55,7 @@ export const BookDetails = () => {
         setBookData(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
   return (
     <div>
       <Navbar />

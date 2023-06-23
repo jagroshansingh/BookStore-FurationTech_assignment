@@ -13,9 +13,8 @@ export const BookListing = () => {
   const [searchParams]=useSearchParams()
   const location=useLocation();
   const { booklist, isLoading } = useSelector((store) => store);
-  // const [booklist,setBookList]=React.useState([])
   const dispatch = useDispatch();
-  console.log(booklist);
+  // console.log(booklist);
 
   React.useEffect(() => {
     axios({
@@ -29,9 +28,8 @@ export const BookListing = () => {
       }
     })
       .then((res) => {
-        console.log('apiCall',res.data);
+        // console.log('apiCall',res.data);
         dispatch(BookList(res.data));
-        // setBookList(res.data)
       })
       .catch((err) => console.log(err));
   }, [location.search]);
