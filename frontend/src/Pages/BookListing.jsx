@@ -14,6 +14,7 @@ export const BookListing = () => {
   const [searchParams]=useSearchParams()
   const location=useLocation();
   const { booklist, isLoading } = useSelector((store) => store);
+  // const [booklist,setBookList]=React.useState([])
   const dispatch = useDispatch();
   console.log(booklist);
 
@@ -29,8 +30,9 @@ export const BookListing = () => {
       }
     })
       .then((res) => {
-        // console.log(res.data);
+        console.log('apiCall',res.data);
         dispatch(BookList(res.data));
+        // setBookList(res.data)
       })
       .catch((err) => console.log(err));
   }, [location.search]);
