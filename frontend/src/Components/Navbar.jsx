@@ -3,6 +3,7 @@ import React from "react";
 import { BsCart3 } from "react-icons/bs";
 import styles from "./CSS/Navbar.module.css";
 import { useNavigate } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 export const Navbar = () => {
   const toast=useToast()
@@ -31,7 +32,7 @@ export const Navbar = () => {
           onClick={() => navigate("/")}
           src="https://furation.tech/ftlogo2.svg"
         />
-        <Input placeholder="SearchBar" />
+        <SearchBar/>
         <div>
           <Icon as={BsCart3} onClick={() => navigate("/shoppingcart")} />
           <Button colorScheme="red" onClick={handleAuth} variant={'outline'}>{!ss?.token?'SignUp/Login':'Logout'}</Button>

@@ -1,0 +1,29 @@
+
+  .searchBarContainer input{
+    width: 700px;
+  }
+  
+  .searchResults {
+    position: absolute;
+    top: 59px;
+    left: 40vw;
+    width: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 4;
+    padding: 0;
+    margin-top: 4px;
+  }
+  
+  .searchResults>li {
+    cursor: pointer;
+    padding: 8px 16px;
+  }
+  
+  .searchResults>li:hover {
+    background-color: #f2f2f2;
+  }
+  
