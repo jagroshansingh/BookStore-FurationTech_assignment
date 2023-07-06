@@ -1,6 +1,6 @@
 # Important
 
-## This is not the "Ticket Reservation System" assignment, instead I have submitted the "Interactive Bookstore Application" that is provided to me on 20th June for the role of Full-Stack developer at Furation.tech.
+## This is not the "Ticket Reservation System" assignment. <br/>Instead I have submitted the "Interactive Bookstore Application" assignment that is provided to me on 20th June for the role of Full-Stack developer at Furation.tech.
 
 ## Still requesting Furation.tech team to kindly take a look at my work.
 
