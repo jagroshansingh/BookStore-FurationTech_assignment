@@ -1,3 +1,6 @@
+# Important
+### This is not the "Ticket Reservation System" assignment, instead I have submitted the "Interactive Bookstore Application" that is provided to me on 20th June for the role of Full-Stack developer.
+
 # ft.bookStore
 
 An Interactive Bookstore application. Build using MERN Stack
