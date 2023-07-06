@@ -3,7 +3,8 @@
 
 # ft.bookStore
 
-An Interactive Bookstore application. Build using MERN Stack
+<p>An Interactive Bookstore application. Build using MERN Stack</p>
+<p>Live: https://book-store-furation-tech-assignment.vercel.app/</p>
 
 # Features
 
@@ -14,6 +15,8 @@ An Interactive Bookstore application. Build using MERN Stack
     <li>Retains the filtered data amid the page reloads</li>
     <li>Hashed the password in DB using bycrypt</li>
     <li>Use of Toast over default alert for feedback</li>
+    <li>Sorting and Filtering through backend</li>
+    <li>Sign-in/Sign-up pages with minimal details to fill</li>
 </ul>
 
 # Usage Instruction
@@ -58,15 +61,16 @@ An Interactive Bookstore application. Build using MERN Stack
     <li>React</li>
     <li>Chakra-UI</li>
     <li>Redux</li>
+    <li>react-router-dom</li>
     <li>Express</li>
     <li>MongoDB</li>
 </ul>
 
 # Snippets
 
-<div><img src="./Snippets/LandingPage.png"></div>
-
-<div><img src="./Snippets/BookListingPage.png"><img src="./Snippets/CartPage.png"/></div>
+<img src="https://github.com/jagroshansingh/BookStore-FurationTech_assignment/blob/master/frontend/public/Snippets/LandingPage.png?raw=true">
+<img src="https://github.com/jagroshansingh/BookStore-FurationTech_assignment/blob/master/frontend/public/Snippets/BookListingPage.png?raw=true">
+<img src="https://github.com/jagroshansingh/BookStore-FurationTech_assignment/blob/master/frontend/public/Snippets/CartPage.png?raw=true"/>
 
 # Backend
 
