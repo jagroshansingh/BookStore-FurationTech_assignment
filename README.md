@@ -1,9 +1,3 @@
-# Important
-
-## This is not the "Ticket Reservation System" assignment. <br/>Instead I have submitted the "Interactive Bookstore Application" assignment that I have built and submitted on 23th June for the role of Full-Stack developer at Furation.tech.
-
-## Still requesting Furation.tech team to kindly take a look at my work.
-
 # ft.bookStore
 
 <p>An Interactive Bookstore application. Build using MERN Stack</p>
